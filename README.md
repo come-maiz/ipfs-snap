@@ -4,7 +4,7 @@ IPFS is the Distributed Web, and this is its snap package.
 
 ## Build
 
-## In Ubuntu
+### In Ubuntu
 
 Install snapcraft:
 
@@ -25,7 +25,7 @@ Build the snap:
 
     $ snapcraft
 
-## In archlinux
+### In archlinux
 
 Install docker:
 
