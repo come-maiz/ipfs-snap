@@ -1,5 +1,5 @@
-name: ipfs
-version: 'v0.4.4'
+name: ipfs-elopio
+version: master
 summary: global, versioned, peer-to-peer filesystem
 description: |
   IPFS combines good ideas from Git, BitTorrent, Kademlia, SFS, and the Web.
@@ -17,6 +17,5 @@ apps:
 parts:
   ipfs:
     source: https://github.com/ipfs/go-ipfs.git
-    source-tag: 'v0.4.4'
     plugin: ipfs
     go-importpath: github.com/ipfs/go-ipfs
