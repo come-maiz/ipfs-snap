@@ -5,3 +5,14 @@ services:
 
 script:
   - ./scripts/snap-in-docker.sh
+
+after_success:
+  - openssl aes-256-cbc -K $encrypted_3f284a8fd88a_key -iv $encrypted_3f284a8fd88a_iv
+    -in .snapcraft/travis_snapcraft.cfg -out .snapcraft/snapcraft.cfg -d
+
+deploy:
+  'on':
+    branch: master
+  provider: script
+  script: ./scripts/push-in-docker.sh
+  skip_cleanup: true
