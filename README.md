@@ -2,9 +2,16 @@
 
 IPFS is the Distributed Web, and this is its snap package.
 
+## Install
+
+   $ sudo snap install ifps --edge
+
+Note that this is an edge release, so it's available there only for brave early
+adpoters that would like to help testing it.
+
 ## Build
 
-### In Ubuntu
+### In Ubuntu 16.04 or newer
 
 Install snapcraft:
 
@@ -24,6 +31,10 @@ Configure the PPA with go 1.7:
 Build the snap:
 
     $ snapcraft
+
+Install it:
+
+    $ sudo snap install ipfs*.snap --dangerous
 
 ### In archlinux
 
@@ -50,7 +61,7 @@ Install snapd:
     $ sudo systemctl enable --now snapd.socket
 
 
-## Install
+Install the built snap:
 
     $ sudo snap install ipfs*.snap --dangerous
 
