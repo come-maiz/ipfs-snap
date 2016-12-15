@@ -4,7 +4,7 @@ IPFS is the Distributed Web, and this is its snap package.
 
 ## Install
 
-   $ sudo snap install ifps --edge
+    $ sudo snap install ifps --edge
 
 Note that this is an edge release, so it's available there only for brave early
 adpoters that would like to help testing it.
