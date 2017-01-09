@@ -12,7 +12,7 @@ confinement: strict
 apps:
   ipfs:
     command: ipfs
-    plugs: [network, network-bind]
+    plugs: [home, network, network-bind]
 
 parts:
   ipfs:
