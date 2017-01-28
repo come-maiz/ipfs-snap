@@ -15,7 +15,7 @@ last_released_tag="$(cat status | grep beta | awk '{print $2}')"
 if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
     # Build using the latest tag.
     sed -i "s/source-tag:.*$/source-tag: '"$last_committed_tag"'/g" snapcraft.yaml
-    sed -i "s/version:.*$/version: '"$last_commited_tag"'/g" snapcraft.yaml
+    sed -i "s/version:.*$/version: '"$last_committed_tag"'/g" snapcraft.yaml
 fi
 
 docker run -v "$(pwd)":/cwd snapcore/snapcraft sh -c "cd /cwd && ./scripts/snap.sh"
