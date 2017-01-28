@@ -17,6 +17,7 @@ apps:
 parts:
   ipfs:
     source: https://github.com/ipfs/go-ipfs.git
+    source-tag: master
     plugin: ipfs
     go-importpath: github.com/ipfs/go-ipfs
     build-packages: [wget]
