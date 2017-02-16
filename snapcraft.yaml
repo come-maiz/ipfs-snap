@@ -18,6 +18,9 @@ parts:
   ipfs:
     source: https://github.com/ipfs/go-ipfs.git
     source-tag: master
-    plugin: ipfs
-    go-importpath: github.com/ipfs/go-ipfs
+    plugin: nil
     build-packages: [wget]
+    install: env GOBIN=$SNAPCRAFT_PART_INSTALL/bin make install
+    after: [go]
+  go:
+    source-tag: go1.7.5
