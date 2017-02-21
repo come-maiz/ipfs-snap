@@ -20,7 +20,14 @@ parts:
     source-tag: master
     plugin: nil
     build-packages: [make, wget]
-    install: env GOBIN=$SNAPCRAFT_PART_INSTALL/bin make install
+    prepare: |
+      mkdir -p ../go/src/github.com/ipfs/go-ipfs
+      cp -R . ../go/src/github.com/ipfs/go-ipfs
+    build: |
+      env GOPATH=$(pwd)/../go make -C ../go/src/github.com/ipfs/go-ipfs install
+    install: |
+      mkdir $SNAPCRAFT_PART_INSTALL/bin
+      mv ../go/bin/ipfs $SNAPCRAFT_PART_INSTALL/bin/
     after: [go]
   go:
     source-tag: go1.7.5
