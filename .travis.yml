@@ -3,6 +3,9 @@ sudo: required
 services:
   - docker
 
+cache:
+  directories: [$HOME/.cache/snapcraft/]
+
 script:
   - openssl aes-256-cbc -K $encrypted_3f284a8fd88a_key -iv $encrypted_3f284a8fd88a_iv
     -in .snapcraft/travis_snapcraft.cfg -out .snapcraft/snapcraft.cfg -d
