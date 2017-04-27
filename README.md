@@ -29,11 +29,6 @@ Clone the repo:
     $ git clone https://github.com/elopio/ipfs-snap
     $ cd ipfs-snap
 
-Configure the PPA with go 1.7:
-
-    $ sudo add-apt-repository ppa:gophers/archive
-    $ sudo apt update
-
 Build the snap:
 
     $ snapcraft
