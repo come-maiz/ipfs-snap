@@ -12,7 +12,7 @@ script:
   - ./scripts/snap-in-docker.sh
   - sudo apt install snapd
   - sudo snap install *.snap --dangerous
-  - ./smoke_test.sh
+  - ./tests/smoke_test.sh
 
 deploy:
   'on':
