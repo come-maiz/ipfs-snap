@@ -6,11 +6,14 @@ services:
 cache:
   directories: [$HOME/.cache/snapcraft/]
 
+install:
+  - sudo apt install snapd
+  - sudo snap install snapcraft --candidate --classic
+
 script:
   - openssl aes-256-cbc -K $encrypted_3f284a8fd88a_key -iv $encrypted_3f284a8fd88a_iv
     -in .snapcraft/travis_snapcraft.cfg -out .snapcraft/snapcraft.cfg -d
   - ./scripts/snap-in-docker.sh
-  - sudo apt install snapd
   - sudo snap install *.snap --dangerous
   - ./tests/smoke_test.sh
 
