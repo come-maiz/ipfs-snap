@@ -7,7 +7,7 @@ cache:
   directories: [$HOME/.cache/snapcraft/]
 
 install:
-  - sudo apt install snapd
+  - sudo apt install --yes snapd libgnutls-dev
   - sudo snap install snapcraft --candidate --classic
 
 script:
