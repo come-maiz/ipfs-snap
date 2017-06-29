@@ -11,7 +11,7 @@ tmp_dir="$(mktemp -d)"
 source="$(cat snapcraft.yaml | grep source: | head -n 1 | awk '{printf $2}')"
 git clone "${source}" "${tmp_dir}"
 last_committed_tag="$(git -C "${tmp_dir}" describe --tags --abbrev=0)"
-$snapcraft status ipfs || echo "none" > status
+($snapcraft status ipfs || echo "none") > status
 last_released_tag="$(cat status | grep beta | awk '{print $2}')"
 
 if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
