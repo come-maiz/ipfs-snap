@@ -10,7 +10,7 @@ script_path="$(dirname "$0")"
 ipfs version | grep "^ipfs version .*$"
 
 # Init the repo.
-#ipfs init
+ipfs init
 
 # Show the readme.
 ipfs cat /ipfs/QmVLDAhCY3X9P2uRudKAryuQFPM5zqA3Yij1dY8FpGbL7T/readme | grep -z "^Hello and Welcome to IPFS!.*$"
