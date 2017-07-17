@@ -30,4 +30,4 @@ parts:
       mv ../go/bin/ipfs $SNAPCRAFT_PART_INSTALL/bin/
     after: [go]
   go:
-    source-tag: go1.7.5
+    source-tag: go1.8.3
