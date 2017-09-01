@@ -13,7 +13,7 @@ $ipfs version | grep "^ipfs version .*$"
 $ipfs init
 
 # Show the readme.
-$ipfs cat /ipfs/QmVLDAhCY3X9P2uRudKAryuQFPM5zqA3Yij1dY8FpGbL7T/readme | grep -z "^Hello and Welcome to IPFS!.*$"
+$ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme | grep -z "^Hello and Welcome to IPFS!.*$"
 
 # Start the daemon.
 $ipfs daemon &
