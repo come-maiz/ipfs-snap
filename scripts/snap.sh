@@ -4,5 +4,7 @@
 
 set -ev
 
-snapcraft clean
-snapcraft
+for arch in amd64 i386 armhf arm64; do
+    snapcraft clean
+    snapcraft --target-arch $arch
+done

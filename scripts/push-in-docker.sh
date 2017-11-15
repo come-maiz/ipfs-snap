@@ -4,4 +4,4 @@
 
 set -ev
 
-docker run -v $(pwd):$(pwd) -v $HOME:/root/ -t snapcore/snapcraft sh -c "apt update -qq && apt install snapcraft -y && cd $(pwd) && snapcraft push *.snap --release edge"
+docker run -v $(pwd):$(pwd) -v $HOME:/root/ -t snapcore/snapcraft sh -c "apt update -qq && apt install snapcraft -y && cd $(pwd) && for arch in amd64 i386 armhf arm64; do snapcraft push *$arch.snap --release edge"
