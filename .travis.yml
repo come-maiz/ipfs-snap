@@ -11,7 +11,7 @@ script:
     -in .snapcraft/travis_snapcraft.cfg -out .snapcraft/snapcraft.cfg -d
   - ./scripts/snap-in-docker.sh
   - sudo apt install snapd
-  - sudo snap install *.snap --dangerous
+  - sudo snap install *amd64*.snap --dangerous
   - ./tests/smoke_test.sh
 
 deploy:

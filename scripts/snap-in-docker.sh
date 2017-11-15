@@ -10,7 +10,7 @@ source="$(cat snapcraft.yaml | grep source: | head -n 1 | awk '{printf $2}')"
 git clone "${source}" "${tmp_dir}"
 last_committed_tag="$(git -C "${tmp_dir}" describe --tags --abbrev=0)"
 docker run -v $(pwd):$(pwd) snapcore/snapcraft sh -c "apt update && apt install -y snapcraft && cd $(pwd) && ((snapcraft status ipfs || echo "none") > status)"
-last_released_tag="$(cat status | grep beta | awk '{print $2}')"
+last_released_tag="$(cat status | grep beta | head -n1 | awk '{print $2}')"
 
 if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
     # Build using the latest tag.
