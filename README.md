@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/elopio/ipfs-snap.svg)](https://travis-ci.org/elopio/ipfs-snap/builds)
+
 # ipfs-snap
 
 IPFS is the Distributed Web, and this is its snap package.
@@ -13,7 +15,7 @@ To help testing the upcoming release:
     $ sudo snap install ipfs --edge
 
 Note that this is an edge release, so it's available there only for brave early
-adpoters that would like to help testing it.
+adopters that would like to help testing it.
 
 ## Build
 
