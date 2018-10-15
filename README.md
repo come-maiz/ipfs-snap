@@ -2,7 +2,7 @@
 
 # ipfs-snap
 
-IPFS is the Distributed Web, and this is its snap package.
+[IPFS](https://github.com/ipfs) is the Distributed Web, and this is its snap package.
 
 ## Install
 
