@@ -22,7 +22,7 @@ deploy:
   'on':
     branch: master
   provider: script
-  script:
-    - snapcraft login --with snapcraft-login
-    - for file in *.snap; do echo 'file: ' \$file && snapcraft push \$file --release edge; done
+  script: |
+    snapcraft login --with snapcraft-login
+    for file in *.snap; do echo 'file: ' \$file && snapcraft push \$file --release edge; done
   skip_cleanup: true
