@@ -18,12 +18,8 @@ script:
   - ./scripts/snap.sh
   - sudo snap install *amd64*.snap --dangerous
   - ./tests/smoke_test.sh
-
-deploy:
-  'on':
-    branch: master
-  provider: script
-  script: |
-    snapcraft login --with snapcraft-login
-    for file in *.snap; do echo 'file: ' $file && snapcraft push $file --release edge; done
-  skip_cleanup: true
+  - |
+    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
+      snapcraft login --with snapcraft-login
+      for file in *.snap; do echo 'file: ' $file && snapcraft push $file --release edge; done
+    fi
