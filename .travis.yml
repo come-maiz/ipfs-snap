@@ -25,5 +25,5 @@ deploy:
   provider: script
   script: |
     snapcraft login --with snapcraft-login
-    for file in *.snap; do echo 'file: ' \$file && snapcraft push \$file --release edge; done
+    for file in *.snap; do echo 'file: ' $file && snapcraft push $file --release edge; done
   skip_cleanup: true
