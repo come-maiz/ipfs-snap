@@ -14,6 +14,7 @@ script:
   - openssl aes-256-cbc -K $encrypted_991c22bb09ad_key -iv $encrypted_991c22bb09ad_iv
     -in snapcraft-login.enc -out snapcraft-login -d
   - snapcraft login --with snapcraft-login
+  - sudo apt update
   - ./scripts/snap.sh
   - sudo snap install *amd64*.snap --dangerous
   - ./tests/smoke_test.sh
