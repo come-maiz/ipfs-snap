@@ -23,6 +23,7 @@ snap() {
     ARCH_TRIPLET=$1 TARGET_GOARCH=$2 snapcraft --target-arch $3
 }
 
+export GOPROXY='https://proxy.golang.org'
 snap x86_64-linux-gnu amd64 amd64
 snap arm-linux-gnueabihf arm armhf
 snap aarch64-linux-gnu arm64 arm64
