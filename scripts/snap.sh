@@ -24,7 +24,6 @@ snap() {
 }
 
 export GO111MODULE=on
-export GOPROXY='https://proxy.golang.org'
 snap x86_64-linux-gnu amd64 amd64
 snap arm-linux-gnueabihf arm armhf
 snap aarch64-linux-gnu arm64 arm64
