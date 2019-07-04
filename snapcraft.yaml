@@ -25,6 +25,7 @@ parts:
       cp -R . ../go/src/github.com/ipfs/go-ipfs
     build: |
       env GOPATH=$(pwd)/../go go clean -modcache
+      env GOPROXY='https://proxy.golang.org' GOPATH=$(pwd)/../go go get github.com/dgraph-io/badger/v2 
       env GOPATH=$(pwd)/../go CC=$ARCH_TRIPLET-gcc CXX=$ARCH_TRIPLET-g++ CGO_ENABLED=1 GOARCH=$TARGET_GOARCH make -C ../go/src/github.com/ipfs/go-ipfs install
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/bin
