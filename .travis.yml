@@ -1,6 +1,8 @@
 dist: xenial
 
-language: minimal
+language: go
+
+go: 1.12.6
 
 addons:
   snaps:
