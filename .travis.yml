@@ -1,6 +1,6 @@
 dist: bionic
 
-language: go
+language: minimal
 
 addons:
   snaps:
