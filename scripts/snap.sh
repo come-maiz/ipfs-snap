@@ -19,6 +19,7 @@ if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
 fi
 
 snap() {
+    sudo rm -rf parts
     snapcraft clean
     ARCH_TRIPLET=$1 TARGET_GOARCH=$2 snapcraft --target-arch $3
 }
