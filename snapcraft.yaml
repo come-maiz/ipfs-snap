@@ -30,4 +30,4 @@ parts:
       done
     after: [go]
   go:
-    source-tag: go1.12.6
+    source-tag: go1.13
