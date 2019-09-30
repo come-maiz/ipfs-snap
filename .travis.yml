@@ -17,6 +17,7 @@ script:
     -in snapcraft-login.enc -out snapcraft-login -d
   - snapcraft login --with snapcraft-login
   - sudo apt update
+  - sudo apt install jq
   - ./scripts/snap.sh
   - sudo snap install *amd64*.snap --dangerous
   - ./tests/smoke_test.sh
