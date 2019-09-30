@@ -7,7 +7,7 @@ set -ev
 # Check if the latest tag is in the beta channel.
 tmp_dir="$(mktemp -d)"
 source="$(cat snapcraft.yaml | grep source: | head -n 1 | awk '{printf $2}')"
-wget --output-document=releases "https://api.github.com/repos/ethereum/go-ethereum/releases?client_id=$github_client_id&client_secret=$github_client_secret"
+wget --output-document=releases "https://api.github.com/repos/ipfs/go-ipfs/releases?client_id=$github_client_id&client_secret=$github_client_secret"
 last_committed_tag="$(jq --raw-output .[0].tag_name releases)"
 (snapcraft status ipfs || echo "none") > status
 last_released_tag="$(cat status | grep beta | head -n1 | awk '{print $2}')"
