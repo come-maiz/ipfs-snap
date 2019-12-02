@@ -1,4 +1,5 @@
 dist: xenial
+sudo: required
 
 language: go
 go: stable
@@ -22,7 +23,7 @@ script:
   - snapcraft login --with snapcraft-login
   - sudo apt update
   - sudo apt install jq
-  - ./scripts/snap.sh
+  - sudo ./scripts/snap.sh
   - sudo snap install *.snap --dangerous
   - ./tests/smoke_test.sh
   - |
