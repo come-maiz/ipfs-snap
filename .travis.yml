@@ -1,8 +1,10 @@
 dist: xenial
 
-language: go
+language: bash
 
-go: 1.12.6
+arch:
+  - amd64
+  - arm64
 
 addons:
   snaps:
@@ -19,7 +21,7 @@ script:
   - sudo apt update
   - sudo apt install jq
   - ./scripts/snap.sh
-  - sudo snap install *amd64*.snap --dangerous
+  - sudo snap install *.snap --dangerous
   - ./tests/smoke_test.sh
   - |
     if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then

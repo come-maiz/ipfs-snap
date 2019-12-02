@@ -18,12 +18,5 @@ if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
     sed -i "s/version:.*$/version: '"$last_committed_tag"'/g" snapcraft.yaml
 fi
 
-snap() {
-    sudo rm -rf parts
-    snapcraft clean
-    ARCH_TRIPLET=$1 TARGET_GOARCH=$2 snapcraft --target-arch $3
-}
-
-snap x86_64-linux-gnu amd64 amd64
-snap arm-linux-gnueabihf arm armhf
-snap aarch64-linux-gnu arm64 arm64
+sudo rm -rf parts
+snapcraft clean
