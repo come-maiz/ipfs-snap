@@ -1,6 +1,7 @@
 dist: xenial
 
-language: minimal
+language: go
+go: stable
 
 arch:
   - amd64
