@@ -7,6 +7,7 @@ description: |
   an interface as simple as the HTTP web, but with permanence built in. You
   can also mount the world at /ipfs.
 
+base: core18
 confinement: strict
 
 apps:
@@ -22,6 +23,5 @@ parts:
     build-snaps: [go]
     override-build: |
       export GOPATH=$SNAPCRAFT_PART_BUILD/go
-      export PATH=/snap/bin:$PATH
       make install
       cp $SNAPCRAFT_PART_BUILD/go/bin/ipfs $SNAPCRAFT_PART_INSTALL
