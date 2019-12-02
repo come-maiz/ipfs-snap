@@ -18,4 +18,4 @@ if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
     sed -i "s/version:.*$/version: '"$last_committed_tag"'/g" snapcraft.yaml
 fi
 
-snapcraft
+snapcraft --use-lxd
