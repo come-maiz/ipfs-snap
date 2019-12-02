@@ -6,16 +6,11 @@ arch:
   - amd64
   - arm64
 
-addons:
-  snaps:
-    - name: snapcraft
-      classic: true
-
 cache:
   directories: [$HOME/.cache/snapcraft/]
 
 script:
-  - sudo snap install snapcraft --classic
+  - until sudo snap install snapcraft --classic; do echo "Retrying"; done
   - openssl aes-256-cbc -K $encrypted_991c22bb09ad_key -iv $encrypted_991c22bb09ad_iv
     -in snapcraft-login.enc -out snapcraft-login -d
   - snapcraft login --with snapcraft-login
