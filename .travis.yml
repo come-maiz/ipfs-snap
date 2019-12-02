@@ -1,6 +1,6 @@
 dist: xenial
 
-language: bash
+language: minimal
 
 arch:
   - amd64
